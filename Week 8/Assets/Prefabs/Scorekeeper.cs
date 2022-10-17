@@ -15,7 +15,7 @@ public class Scorekeeper : MonoBehaviour
         }
     }
 
-    private void IncreaseScore()
+    public void IncreaseScore()
     {
         score += pointsPerPickup;
     }
