@@ -5,18 +5,42 @@ using UnityEngine;
 public class Scorekeeper : MonoBehaviour
 {
     [SerializeField] private int pointsPerPickup = 1;
-    private int score = 0;
+    private int score1 = 0;
+    private int score2 = 0;
+    private int playerNum;
 
-    public float getScore
+    public float getScore1
     {
         get
         {
-            return score;
+            return score1;
+        }
+    }
+    public float getScore2
+    {
+        get
+        {
+            return score2;
+        }
+    }
+    public int getPlayerNum
+    {
+        get
+        {
+            return playerNum;
         }
     }
 
-    private void IncreaseScore()
+    public void IncreaseScore(int num)
     {
-        score += pointsPerPickup;
+        playerNum = num;
+        if (playerNum == 1)
+        {
+            score1 += pointsPerPickup;
+        }
+        else if (playerNum == 2)
+        {
+            score2 += pointsPerPickup;
+        }
     }
 }
